@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Montreal Home Price Prediction</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="hero-background"></div>
+
+        <div class="container">
+            <div class="app-card">
+                <div class="header">
+                    <h1>Montreal Home Prices</h1>
+                    <p>Get instant price estimates for Montreal properties</p>
+                </div>
+
+                <div class="form-section">
+                    <label for="uiRegions" class="form-label">Select Region</label>
+                    <select class="region-select" id="uiRegions" aria-label="Select Montreal region">
+                        <option value="" disabled selected>Choose a region</option>
+                        <option>Ahuntsic / Cartierville</option>
+                        <option>Anjou</option>
+                    </select>
+                </div>
+
+                <div class="bedrooms-section">
+                    <label class="form-label">Number of Bedrooms</label>
+                    <div class="bedroom-grid">
+                        <div class="bedroom-option">
+                            <input type="radio" id="radio-br-1" name="uiBedrooms" value="1"/>
+                            <label for="radio-br-1">1</label>
+                        </div>
+                        <div class="bedroom-option">
+                            <input type="radio" id="radio-br-2" name="uiBedrooms" value="2" checked/>
+                            <label for="radio-br-2">2</label>
+                        </div>
+                        <div class="bedroom-option">
+                            <input type="radio" id="radio-br-3" name="uiBedrooms" value="3"/>
+                            <label for="radio-br-3">3</label>
+                        </div>
+                        <div class="bedroom-option">
+                            <input type="radio" id="radio-br-4" name="uiBedrooms" value="4"/>
+                            <label for="radio-br-4">4</label>
+                        </div>
+                        <div class="bedroom-option">
+                            <input type="radio" id="radio-br-5" name="uiBedrooms" value="5"/>
+                            <label for="radio-br-5">5</label>
+                        </div>
+                        <div class="bedroom-option">
+                            <input type="radio" id="radio-br-6" name="uiBedrooms" value="6"/>
+                            <label for="radio-br-6">6</label>
+                        </div>
+                        <div class="bedroom-option">
+                            <input type="radio" id="radio-br-7" name="uiBedrooms" value="7"/>
+                            <label for="radio-br-7">7</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="estimate-button" onclick="onClickedEstimatePrice()" type="button">
+                    Get Price Estimate
+                </button>
+
+                <div class="result-container">
+                    <div class="loading" id="loading">Calculating estimate</div>
+                    <div id="uiEstimatedPrice" class="result-card"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
