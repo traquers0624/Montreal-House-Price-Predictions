@@ -32,7 +32,7 @@ function onClickedEstimatePrice() {
         return;
     }
 
-    var url = "http://127.0.0.1:5000/predict_home_price";
+    var url = "/predict_home_price";
 
     $.post(url, {
         bedrooms: bedrooms,
@@ -83,7 +83,7 @@ function showError(message) {
 
 function onPageLoad() {
     console.log("document loaded");
-    var url = "http://127.0.0.1:5000/get_region_names";
+    var url = "/get_region_names";
     
     $.get(url, function(data, status) {
         console.log("got response for get_region_names request");
